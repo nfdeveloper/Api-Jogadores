@@ -8,3 +8,6 @@ jogador_router = APIRouter()
 async def inicio():
     return "Bem vindo ao FullStack Farm"
 
+@jogador_router.get("/jogadores")
+async def lista_jogadores():
+    return conexao.local.jogador.find() 
